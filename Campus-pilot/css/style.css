@@ -1,0 +1,19 @@
+
+@import url('https://fonts.googleapis.com/css?family=Comfortaa|Jua|Nunito|Open+Sans|Oxygen|Quicksand|Raleway|Roboto|Tajawal|Ubuntu');
+*{
+	margin: 0;
+	padding: 0;
+box-sizing: border-box;
+}
+body{
+	font-family: 'Open Sans', sans-serif;
+	
+	}
+	
+@media (max-width: 575.98px) { ... }
+
+@media (max-width: 767.98px) { ... }
+
+@media (max-width: 991.98px) { ... }
+
+@media (max-width: 1199.98px) { ... }
