@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+$email = $id = '';
 if (isset($_POST['submit'])) {
 require '../inc/dbh.inc.php';
 
@@ -129,7 +129,7 @@ include 'inc/nav.php';
 
 <form method="POST" action="add-a-service.php" enctype="multipart/form-data">
 
-	<h4><i class="fa fa-plus"></i>Add A Campus Service</h4>
+	<h4 align="center" style="margin:10px;"><i class="fa fa-plus"></i>Add A Campus Service</h4>
 <div class="container-fluid">
 <div><h5>
 <?php
@@ -212,7 +212,9 @@ unset($_SESSION['good']);
 	<br>
 
 <h6 style="float: left;color: #D2691E">Description</h6>
-<textarea cols="10" rows="5" class="form-control" placeholder="Service Description Here(Max:300 Words). Ensure to give presice information about your service,this is more like your best marketing tool" maxlength="300" minlength="20" name="description"  value=""><?php if(isset($_SESSION['descriptionu']))
+<textarea cols="10" rows="5" class="form-control" placeholder="Service Description Here(Max:300 Words).
+ Ensure to give presice information about your service,this is more like your best marketing tool"
+  maxlength="300" minlength="20" name="description"  value=""><?php if(isset($_SESSION['descriptionu']))
 {echo $_SESSION['descriptionu'];
 	unset($_SESSION['descriptionu']);}  ?></textarea>
 Add Your Featured Image

@@ -1,10 +1,12 @@
 <?php
 session_start();
 if (isset($_GET['lodge_name'])) {
-	require 'inc/dbh.inc.php';
+	require '../inc/dbh.inc.php';
 $lodge_name = mysqli_real_escape_string($conn,$_GET['lodge_name']);
 	$sql =  "SELECT * FROM lodger_man WHERE lodge_name ='$lodge_name';";
 	if($qo = mysqli_query($conn,$sql)){
+		$sqli = "UPDATE lodger_man SET visit_count1 = visit_count1 + 1 WHERE lodge_name = '$lodge_name';";
+		mysqli_query($conn,$sqli);
 		$r = mysqli_fetch_assoc($qo);
 	}
 }else{

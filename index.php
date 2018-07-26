@@ -1,5 +1,13 @@
 <?php
 session_start();
+
+if (isset($_POST['cookie_okay'])) {
+  setcookie('cookie_okay','true',time() + 3600000);
+}
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,13 +18,58 @@ session_start();
 <meta name="Description" content="Find a roomate,Lodge,Pay your rents,view all campus services,buy and sell used items,Find a ride to your destination when you use campus pilot.">
 
 <meta property="og:description" content="Find a Lodge,Book a room,Buy and Sell,Find various services on campus,shop for food stuffs at regular price.">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 </head>
 
+<script>
+
+  if ($('.cookie-banner').length) {
+    $('.cookie-banner').fadeIn(800);
+  }
+
+function cookie_set() {
+ document.getElementById('cookie').hide(slow);
+document.cookie = "cookie_set_yhf= true;";
+  console.log('cookie set');
+
+}
+
+</script>
 <body>
 <header>
 <?php include 'inc/nav.php'; ?>
 
  </header>
+
+<?php 
+
+if (!isset($_COOKIE['cookie_set_yhf'])) { ?>
+<!--  cookie banner -->
+ <div style="background:#333;position:fixed;
+left:0;right:0;margin:0 auto;width:100%;color:#fff;padding:5px;display: inline-block;" class="fixed-bottom"
+align="center" class="cookie-banner" id="cookie">
+   <div>
+     <p>
+      Welcome,We use cookies on this website, to continue using please
+        accept cookies or see why we use cookies
+        <a href="about-cookie">here.</a> 
+        <br>
+        <button type="button" class="btn btn-success" onclick="cookie_set();">Continue</button>
+     </p>
+   </div>
+ </div>
+ <!-- cookie banner/ -->
+ 
+
+<?php
+}else{ ?>
+
+
+
+  <?php
+}
+?>
 <div id="carouselExampleIndicators" class="carousel slide d-md-none" data-ride="carousel">
   <ol class="carousel-indicators">
     <!-- <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li> -->
@@ -68,7 +121,7 @@ session_start();
   <div class="card" style="border:1px solid white;margin-top: 15px;">
   <img class="center" style="display: block;margin-left: auto;margin-right: auto;width: 50%;" width="100" src="img/home-icon.png" alt="Lodge">
   <div class="card-body">
-    <h5 class="card-title center">Lodge</h5>
+    <h5 class="card-title center">Lodgerman</h5>
     <p class="card-text">Find a Lodge in and around campus for free from various location listings,choose the best for yourself and only the best.<br></p>
   </div>
 </div>
@@ -138,14 +191,15 @@ session_start();
 
 <div class="col-xs-12 col-sm-12 col-md-3">
 
-  <div class="card" style="border:1px solid white;margin-top: 15px;" >
+  <div class="card" style="border:1px solid white;margin-top: 15px;">
+  <div align="center">
     <i class="fa fa-car" style="font-size: 110px" ></i>
+</div>
 <div class="card-body">
     <h5 class="card-title">Campus Pilot</h5>
     <p class="card-text">Campus pilot helps you out in times of transportation difficulties at affordable prices.</p>
   </div>
 </div>
-<hr class="d-md-none">
 </div>
 </div>
 <div class="row">

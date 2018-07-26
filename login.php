@@ -32,7 +32,7 @@ include('inc/header.php');
 ?>
 	<title>Login</title>
     </head>
-<body style="background-color: #f1f1;">
+<body style="background-color: #fff;">
 <!--Main Navigation-->
 <header>
 <?php include'inc/nav.php'; ?>        
@@ -69,6 +69,17 @@ include('inc/header.php');
 			?>		
 
 <h5>Login<i class="fa fa-shield"></i></h5>
+
+<div style="background-color:#0000CD;color: #fff;padding: 4px;margin-bottom: 5px;border-radius: 8px;">
+<i class="fa fa-facebook"></i> | <h6 style="display: inline-block;">Continue with Facebook</h6>
+</div> 
+
+
+<div style="background-color:  	#228B22;color: #fff;padding: 4px;margin-bottom: 5px;border-radius: 8px;">
+<i class="fa fa-google"></i> | <h6 style="display: inline-block;">Continue with Google</h6>
+</div> 
+
+<h4>OR</h4>
 	<div class="form-group align-items-center">
 		<div class="input-group mb-2">
 		<div class="input-group-prepend">

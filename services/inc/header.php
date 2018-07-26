@@ -29,7 +29,7 @@
 <meta name="twitter:site" content="Yourhomefuto.com.ng">
 <meta 	name="twitter:creator" content="ceofred">
 <meta name="twitter:url" content="https://www.Yourhomefuto.com.ng">
-<meta 	name="twitter:description" content="Looking for any service quick and easy? We've got you covered view all available services and business around and begin to patronized.">
+<meta 	name="twitter:description" content="Looking for any service on campus? We've got you covered view all available services and business around and begin to patronized.">
 <meta name="twitter:image" content="../img/logo.png">
 <!-- Application shortcut icon -->
 <meta name="mobile-web-app-capable" content="yes">
@@ -37,7 +37,7 @@
 
 <!-- Status bar color -->
 <!-- For andriod chrome -->
-<meta name="theme-color" content="#66CDAA">
+<meta name="theme-color" content="#D2691E">
 <!-- for IOS -->
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <meta name="msapplication-TileColor" content="#ffffff">

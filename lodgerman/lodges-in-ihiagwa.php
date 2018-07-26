@@ -14,51 +14,55 @@ if ($query = $lodgeobj->query($sql)) {
 }else {
   // echo "Not Queried";
 }
+
 }
  ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Lodges in Ihiagwa - Lodgerman</title>
+  <title>Lodges in Ihiagwa,FUTO - Lodgerman</title>
 <?php
 require 'inc/header.php';
  ?>
  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+
+
 </head>
 <body>
-	<style type="text/css">
-		.breadcrumb-arrow {
+
+  <style type="text/css">
+    .breadcrumb-arrow {
     height: 36px;
     padding: 0;
     line-height: 36px;
     list-style: none;
     background-color: #e6e9ed
 }
-	</style>
+  </style>
 <?php require'inc/nav.php'; ?>
 
 <div>
-	<div>
+  <div>
 
 <?php
 
 require 'inc/dbh.inc.php';
 if (isset($_GET['Location'])) {
-	$lodgername =    mysqli_real_escape_string($conn,$_GET['Location']);
+  $lodgername =    mysqli_real_escape_string($conn,$_GET['Location']);
 }
  ?>
-		<!-- breadcrumbs -->
-		<ol class="breadcrumb">
-		<li><a href="index" style="color: black;padding-right: 10px;">Home >> </a></li>
-		<li><a href="#" style="color: black">Ihiagwa(<?php echo $total; ?>)Lodges </a></li>
-	</ol>
-	</div>
+    <!-- breadcrumbs -->
+    <ol class="breadcrumb">
+    <li><a href="index" style="color: black;padding-right: 10px;">Home >> </a></li>
+    <li><a href="#" style="color: black">Ihiagwa(<?php echo $total; ?>)Lodges </a></li>
+  </ol>
+  </div>
 
 
 </div>
-<div class="container">
+<div class="container-fluid">
 
 
   <div class="row">
@@ -69,10 +73,11 @@ if (isset($_GET['Location'])) {
             while ($r = mysqli_fetch_assoc($res)) {
 
           ?>
-
-          <div>
-          	<div style="border-radius: 6px;border:1px solid #66CDAA;">
-          <div id="carouselExampleIndicators" class="carousel slide d-md-none" data-ride="carousel">
+          <div class="col-sm-12 col-md-4">
+            
+<div class="card" style="width: 100%;">
+  <div class="card-body">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
               <!-- <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li> -->
               <!-- <li data-target="#carouselExampleIndicators" data-slide-to="1"></li> -->
@@ -87,7 +92,7 @@ if (isset($_GET['Location'])) {
 
               <div class="carousel-item">
               <a>
-                <img class="d-block w-100 d-none d-sm-block" height="330" src="img/hot.jpg" alt="Umuchima">
+                <img class="d-block w-100 d-none d-sm-block" height="330" src="img/hot.jpg" alt="Ihiagwa">
                </a>
                  <div class="carousel-caption">
               <h6 style="margin-bottom:-40px;"></h6>
@@ -104,51 +109,67 @@ if (isset($_GET['Location'])) {
               <span class="sr-only">Next</span>
             </a>
           </div>
-          	<span style="margin-top: 5px;padding-left: 20px;padding-top: 20px;">
-          		<p style="color: #66CDAA;padding-left: 10px;"><i class="fa fa-home" style="font-size: 30px;"></i><?php echo $r['lodge_name']; ?>
-          	</p>
-          		<p style="color: #66CDAA;padding-left: 10px;"><i class="fa fa-map-marker" style="font-size: 30px;"></i><?php echo $r['lodge_location']; ?></p>
+    <h5 class="card-title">
+      <p style="padding: 5px;"><i class="fa fa-home" style="font-size:20px;">
+        
+      </i><?php echo $r['lodge_name']; ?>
+            </p>
 
-          		<p style="color: #66CDAA;padding-left: 10px;"><i class="fa fa-money" style="font-size: 30px;"></i><?php echo $r['price'] ?></p>
-          <p class="btn-group" align="center">
+    </h5>
+    <p class="card-text">
+                                  <p style="padding:5px;"><i class="fa fa-map-marker" style="font-size: 20px;"></i> <?php echo $r['lodge_location']; ?></p>
 
-          	<a href="lodge?lodge_name=<?php echo $r['lodge_name']; ?>" class="btn btn-block" style="background-color:#990033;border-radius: 0px;width: 100%;margin: 10px;color:#fff;"><i class="fa fa-eye"></i> View</a>
+                                  <p style="padding:5px;"><i class="fa fa-road" style="font-size: 20px;"></i> <?php echo $r['distance_from_school']; ?></p>
 
-                      	<a href="share" class="btn btn-block" style="background-color:#997033;border-radius: 0px;width: 100%;margin: 10px;color:#fff;"><i class="fa fa-share"></i>Share</a>
-          	<!-- Button trigger modal -->
-          	</span>
-          	</div>
-          </div>
+     <p style="padding: 10px;"><i class="fa fa-money" style="font-size: 20px;"></i>
+              <?php echo $r['price'] ?></p>
+     
+    </p>
+<div class="btn-group" role="group" align="center">
+  <a style="color: black;" href="lodge?lodge_name=<?php echo($r['lodge_name']); ?>" class="btn-lg btn btn-primary"><i class="fa fa-eye"></i>View</a>
+  <a   class="btn-lg btn btn-secondary disabled"><i class="fa fa-book"></i>Book</a>
 
-          <?php } ?>
-  </div>
 
-  <div class="row" class="">
-		<div class="col-md-3 col-sm-12 d-none d-md-block">
-			<div class="card" style="padding: 30px;">
-				<div class="card-boy">
-
-				</div>
-			</div>
-		</div>
-		<div class="col-md-9 col-sm-12">
-
-<div class="d-none d-md-block">
-			<h5>199 Lodges in Umuchima</h5>
-
-			<nav style="background-color: #3d5c5c;padding: 10px;color: #fff;">
-				Sort Lodges By: <i><input type="radio" name="our_recomendation"> Our Recomendations</i>
-				<i><input type="radio" name="Most_expensive">Most Expensive</i>
-				<i><input type="radio" name="Most_popular">Most Popular</i>
-				<i><input type="radio" name="Less_expensive">Less Expensive</i>
-				<a href="" class="btn btn-primary" style="border-radius: 0px;width: 100px;height: 30px;">Sort</a>
-			</nav>
+  <a href="https://wa.me/?text=Check out lodges in Ihiagwa,Futo now on yourhomefuto.com.ng/lodger_man/lodge?lodge_name=<?php echo($r['lodge_name']); ?>" class="btn-lg btn btn-success"><i class="fa fa-whatsapp"></i>Share
 
 </div>
 
-		</div>
 
-	</div>
+  </div>
+</div>
+        
+<br>
+          </div>
+          
+          <?php } ?>
+  </div>
+
+  <!-- <div class="row" class="">
+    <div class="col-md-3 col-sm-12 d-none d-md-block">
+      <div class="card" style="padding: 30px;">
+        <div class="card-boy">
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9 col-sm-12">
+  -->
+<!--- <div class="d-none d-md-block">
+      <h5>199 Lodges in Umuchima</h5>
+
+      <nav style="background-color: #3d5c5c;padding: 10px;color: #fff;">
+        Sort Lodges By: <i><input type="radio" name="our_recomendation"> Our Recomendations</i>
+        <i><input type="radio" name="Most_expensive">Most Expensive</i>
+        <i><input type="radio" name="Most_popular">Most Popular</i>
+        <i><input type="radio" name="Less_expensive">Less Expensive</i>
+        <a href="" class="btn btn-primary" style="border-radius: 0px;width: 100px;height: 30px;">Sort</a>
+      </nav>
+
+</div>
+ -->
+    </div>
+
+  </div>
 
 </div>
 

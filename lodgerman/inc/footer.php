@@ -1,4 +1,5 @@
-<footer class="fixed" style="font-family: 'nunito','sans-serif';color: white;background-color:black;margin-top:50px;">
+<footer class="fixed" style="font-family: 'nunito','sans-serif';color: white;background-color:black;
+margin-top:50px;margin-bottom:50px;">
     <div class="container">
         <div class="row" >
 
@@ -28,11 +29,20 @@
                     <div class="col-md-3 d-none d-md-block" style="margin-top: 40px;">
             <p>Top Logdes</p>
             <hr>
-            <p>Presidential Villa</p>
-            <p>Koko Mansion</p>
-            <p>Casa Zizimex</p>
-            <p>La'farge</p>
-            <p>Jesus is lord</p>
+            <?php 
+require 'inc/dbh.inc.php';
+
+$sql = "SELECT * FROM lodger_man ORDER BY visit_count1 DESC";
+$and = mysqli_query($conn,$sql);
+while($row = mysqli_fetch_assoc($and)) {?>
+
+<p><?php echo $row['lodge_name']; ?>
+</p>
+  
+
+  <?php
+}
+             ?>
           </div>
           <div class="col-md-3 d-none d-md-block" style="margin-top: 40px;">
               <h5>Contacts</h5>

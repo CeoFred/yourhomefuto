@@ -1,14 +1,14 @@
 <?php
 session_start();
-require'inc/dbh.inc.php';
-if(isset($_GET['name']) & !empty($_GET['name'])){
-	$id = $_GET['name'];
-	$sql = "SELECT * FROM services WHERE name = '$id' ;";
+require'../inc/dbh.inc.php';
+if(isset($_GET['id']) &  !empty($_GET['id'])){
+	$id =  mysqli_real_escape_string($conn,$_GET['id']);
+	$sql = "SELECT * FROM services WHERE id = '$id' ;";
 		$res = mysqli_query($conn, $sql);
 	if ($res) {
+		
 
-
-mysqli_query($conn,$addcount = "UPDATE services SET visit_count1 = visit_count1 + 1 WHERE name = '$id';");
+mysqli_query($conn,$addcount = "UPDATE services SET visit_count1 = visit_count1 + 1 WHERE id = '$id';");
 
 
 	$prodr = mysqli_fetch_assoc($res);
@@ -93,7 +93,7 @@ if (empty($review)) {
 
 <!-- Status bar color -->
 <!-- For andriod chrome -->
-<meta name="theme-color" content="#66CDAA">
+<meta name="theme-color" content="#D2691E">
 <!-- for IOS -->
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <meta name="msapplication-TileColor" content="#ffffff">
@@ -101,7 +101,7 @@ if (empty($review)) {
 <meta name="theme-color" content="#ffffff">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<link rel="stylesheet" type="text/css" href="../css/style.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
 <meta name="Keywords" content="service,campus,Futo,campus-services,futo-roomates,futo services,campus-roomates,buy-and-sell,futo-sell,futo-market,iexchange">
 <meta name="Description" content="<?php echo $prodr['name']; ?> is an active service in campus,check out our services now.">
 <link rel="icon" href="../favicon.ico" type="image/x-icon">

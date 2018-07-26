@@ -13,7 +13,11 @@ $message = "
     <p>Hello $bname,</p>
       <div class='col'>  
 <br>
-<p style='color:black;font-size:30px;color:black;font-family:arial;'>Congrats on creating your busness profile on Yourhomefuto!. It doesn't just end there, we would try and do some validation,to be sure if this service trully exisits, this process would take about 3 days to  verify ,meanwhile this servcie would be runnig but with a bad signal note. For Imediate verfication please send proof of ownership of service to <a href=mailto:csyhf@yourhomefuto.com.ng>csyhf@yourhomefuto.com.ng</a>, this may include imagess or docuuments related to your business. Goodluck.  
+<p style='color:black;font-size:30px;color:black;font-family:arial;'>Congrats on creating your 
+busness profile on Yourhomefuto!. It doesn't just end there, we would try and do some validation,to
+ be sure if this service trully exisits, this process would take about 3 days to  verify
+  ,meanwhile this servcie would be runnig but with a bad signal note. For Imediate verfication 
+  please send proof of ownership of service to <a href=mailto:csyhf@yourhomefuto.com.ng>csyhf@yourhomefuto.com.ng</a>, this may include imagess or docuuments related to your business. Goodluck.  
 
 <br>
 <h5>
@@ -76,7 +80,7 @@ function smtpmailer($to, $from, $from_name, $subject, $body) {
     $mail->AddAddress($to);
     if($mail->Send()) {
         
-  $_SESSION['good'] = "Check your inbox for a welcome message,thank you.";
+  $_SESSION['good'] = "Service was successfully uploaded,check your inbox for a welcome message,thank you.";
 header("Location: index");
 exit();
     } 
@@ -217,8 +221,8 @@ border:2px solid grey;">
   <div><i class="fa fa-certificate" style="color:#66CDAA;"></i> <?php echo $r['category']; ?></div>
   <a href="tel: <?php echo $r['contact']; ?>" class="btn btn-secondary btn-sm"><i class="fa fa-phone"></i>Phone</a>
 
-  <a href=":https://wa.me/?text=Check%20Out%20my%20Service%20on%20yourhomefuto.com.ng%20Service-name%20<?php echo $r['name']; ?>%20link=yourhomefuto.com.ng/services/service?name=<?php echo $r['name']; ?>%20Create%20yours200%here20%yourhomefuto.com.ng/services/add-a-service?iv" class="btn btn-success btn-sm"><i class="fa fa-whatsapp"></i>Share</a>
-  <a href="service?name=<?php echo $r['name']; ?>" class="btn btn-primary btn-sm">View</a>
+  <a href="https://wa.me/?text=Check out this service now on yourhomefuto.com.ng/services/service?&id=<?php echo($r['id']); ?>" class="btn btn-success btn-sm"><i class="fa fa-whatsapp"></i>Share</a>
+  <a href="service?id=<?php echo($r['id']); ?>" class="btn btn-primary btn-sm">View</a>
 <?php
 echo $_SESSION['verified'];
 ?>

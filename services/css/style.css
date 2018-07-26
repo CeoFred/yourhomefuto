@@ -9,9 +9,7 @@ body{
 	font-family: 'Open Sans', sans-serif;
 	
 	}
-	a,h1,h2,h3,h4,h5,h6{
-		text-align:center;
-	}
+	
 @media (max-width: 575.98px) { ... }
 
 @media (max-width: 767.98px) { ... }

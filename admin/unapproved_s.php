@@ -75,7 +75,7 @@ echo $rowlisting['contact'];
 		?>				
 					</th>
 					<th>
-						<a class="btn btn-success" href="activate_service.php?name=<?php echo$rowlisting['name']; ?>">Activate Service</a>
+						<a class="btn btn-success" href="activate_service.php?id=<?php echo$rowlisting['id']; ?>">Activate Service</a>
 					</th>
 
 </tr>

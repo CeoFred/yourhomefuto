@@ -39,7 +39,7 @@
 
 <!-- Status bar color -->
 <!-- For andriod chrome -->
-<meta name="theme-color" content="#66CDAA">
+<meta name="theme-color" content="#B0E0E6">
 <!-- for IOS -->
 <link rel="manifest" href="../manifest.json">
 <meta name="msapplication-TileColor" content="#ffffff">

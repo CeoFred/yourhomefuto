@@ -8,17 +8,10 @@ session_start();
 <head>
 <head>
     <title>LodgerMan | yourhomefuto</title>
-    <?php require'inc/header.php'; ?>
+    <?php include 'inc/header.php'; ?>
 </head>
 
 <body>
-
-<style type="text/css">
-	#lodge,img :hover{
-font-size: 30px;
-	}
-
-</style>
 <?php require'inc/nav.php'; ?>
 <header style="padding:40px;background-image: url(img/bg.jpg);background-size: cover;background-position: center;"  class="d-md-block d-none">
 	<div class="row" >
@@ -35,7 +28,7 @@ font-size: 30px;
 	</div>
 
 	</div>
-		<div style="margin-top: 50px;" class="col-md-6 col-sm-12">
+		<div style="margin-top: 50px;padding: 15px;" class="col-md-6 col-sm-12">
 
 	<form method="post" action="lodgermansearch.php">
 <div style="background-color: rgba(223,224,223,0.8);">
@@ -128,9 +121,9 @@ Exterior
       <!-- mobile header -->
 <header style="padding:20px;background-image: url(img/hot.jpg);background-size:cover;border-raduis:7px;" class="d-md-none">
 	<div class="row" >
-		<div style="margin-top: 30px;width:100%" class=" col-sm-12">
+		<div style="margin-top: 30px;width:100%;padding: 10px;" class=" col-sm-12">
 <form method="post" action="lodgermansearch.php">
-<div style="background-color: rgba(223,224,223,0.8);">
+<div style="background-color: rgba(223,224,223,0.8);padding: 18Px;">
 	<h3 style="background-color: #B0E0E6;width: 100%;padding: 10px;color: #fff;font-size:25px;">
 	<i class="fa fa-bed" style="color: #fff;font-size: 30px;"></i> LodgerMan Search</h3>
 <span>
@@ -183,7 +176,7 @@ Exterior
 </select>
 
 			</div>
-			<div class="col-md-6" style="padding-left: 20px;"
+			<div class="col-md-6" style="padding-left: 20px;">
 	<i class="fa fa-road"></i>Distance From Campus
 	<br>
 
@@ -254,7 +247,7 @@ $num = mysqli_num_rows($q);
 echo $num;
  ?> Verified Lodges</div>
 
-	<img src="img/loca.png" height="300" width="100%">
+	<img src="img/loca2.png" height="300" width="100%">
 </a>
 	</div>
 </div>
@@ -272,7 +265,7 @@ $num = mysqli_num_rows($q);
 echo $num;
  ?> Verified Lodges</div>
 
-	<img src="img/loca3.png" height="300" width="100%">
+	<img src="img/loca2.png" height="300" width="100%">
 </a>
 	</div>
 </div>
@@ -288,7 +281,7 @@ echo $num;
 <div class="col-md-4" style="margin-bottom: 20px;">
 	<div>
 
-	<img src="img/home.png" style="" width="100%" height="100%">
+	<img src="img/loca5.png" style="" width="100%" height="100%">
 		</div>
 
 
@@ -326,7 +319,7 @@ echo $num;
 <div class="col-md-4" style="margin-bottom: 20px;">
 	<div>
 
-	<img src="img/loca4.png" style="" width="100%" height="350">
+	<img src="img/loca5.png" style="" width="100%" height="350">
 		</div>
 
 

@@ -20,7 +20,7 @@ if (isset($_SESSION['email'])) {
       <li class="nav-item">
         <a class="nav-link" href="../iexchange/">IExchange</a>
       </li>
-      <li class="nav-item active" >
+      <li class="nav-item active">
         <a class="nav-link" href="../services/">Campus Services</a>
       </li>
       <li class="nav-item">
@@ -40,7 +40,7 @@ if (isset($_SESSION['email'])) {
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <a class="btn btn-success my-2 my-sm-0" href="../inc/logout.php" type="submit">LogOut</a>
+      <a class="btn btn-success my-2 my-sm-0" href="../inc/logout.php">LogOut</a>
 
 <a class="btn btn-warning my-2 my-sm-0" href="../user/">Profile</a>
     </form>
@@ -60,7 +60,7 @@ else{
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="../">Home<span class="sr-only">(current)</span></a>
       </li>
 
@@ -89,9 +89,9 @@ else{
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <a class="btn btn-success my-2 my-sm-0" href="../login.php" type="submit">Login</a>
+      <a class="btn btn-success my-2 my-sm-0" href="../login.php" >Login</a>
 
-      <a class="btn btn-outline-dark my-2 my-sm-0" href="../signup.php" type="submit">Signup</a>
+      <a class="btn btn-outline-dark my-2 my-sm-0" href="../signup.php">Signup</a>
     </form>
   </div>
 </nav>';
