@@ -32,10 +32,6 @@ if (isset($_SESSION['email'])) {
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="../Rent/">My Lodge Rents</a>
-      </li>
-
-      <li class="nav-item">
         <a class="nav-link" href="../Campus-pilot/">Campus Pilot</a>
       </li>
     </ul>
@@ -79,9 +75,6 @@ else{
 
       <li class="nav-item">
         <a class="nav-link" href="../shopon/">ShopOn</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="../Rent/">My lodge rent</a>
       </li>
 
       <li class="nav-item">

@@ -37,7 +37,7 @@ include('inc/header.php');
 <header>
 <?php include'inc/nav.php'; ?>        
 </header>
-<main style="margin-top:50px;margin-bottom: 170px;" class="justify-content-md-center">
+<main style="margin-top:50px;margin-bottom: 270px;" class="justify-content-md-center">
 	<div id="form" class="form">
 	<form method="POST" action="inc/login.inc.php" style="height: 300px;" class="md-form">
 <div class="container">
@@ -79,7 +79,7 @@ include('inc/header.php');
 <i class="fa fa-google"></i> | <h6 style="display: inline-block;">Continue with Google</h6>
 </div> 
 
-<h4>OR</h4>
+<h4><span><hr></span>OR </h4>
 	<div class="form-group align-items-center">
 		<div class="input-group mb-2">
 		<div class="input-group-prepend">
@@ -101,11 +101,7 @@ include('inc/header.php');
 			</div>
 		</div>
 		
-		<input type="Password" id="password"  name="password" id="viewPwdLogin" class="form-control" placeholder="Password"><div class="input-group-prepend">
-			<div class="input-group-text">
-				<button class="btn btn-primary" onclick="changPwdView()" id="viewpass" type="button"><i class="fa fa-eye" style="font-size: 15px;"></i></button>
-			</div>
-		</div>
+		<input type="Password" id="password"  name="password" id="viewPwdLogin" class="form-control" placeholder="Password">
 	</span>
 	</div>
 	</div>
@@ -114,11 +110,11 @@ include('inc/header.php');
 		<input type="checkbox" name="remember" id="checkbox" style="display: inline;margin: 0"> <label for="checkbox" style="display: inline;margin: 0;padding: 0">Remember me</label>
 					</div>
 		<br>
-		<button name="submit" type="submit" class="btn waves-effect waves-light btn-success">Log In</button>
-	<span><a href="recover.php" style="color: black;">Forgot Password</a></span>
+		<button name="submit" type="submit" class="btn btn-block btn-success">Log In</button>
+		<br>
+	<span><a href="recover.php" style="color: red;">Forgot Password</a></span>
 	<br>
-		Not a user? <a href="signup.php">SignUp</a>
-
+		Not a user? <a style="color: black;" href="signup.php">SignUp</a>
 	</div>
 </div>
 	</form>

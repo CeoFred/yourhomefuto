@@ -1,6 +1,7 @@
 <?php
 session_start();
 require'../inc/dbh.inc.php';
+$email = $fname ='';
 if(isset($_GET['id']) &  !empty($_GET['id'])){
 	$id =  mysqli_real_escape_string($conn,$_GET['id']);
 	$sql = "SELECT * FROM services WHERE id = '$id' ;";
@@ -112,7 +113,24 @@ if (empty($review)) {
 <?php
 include'inc/nav.php';
 ?>
+	
+<?php if(isset($_SESSION['rev_success'])){ ?>
+				<div  style="background-color: rgb(0,244,66);text-align: center;font-size: 1.2em;padding: 10px;font-family:;">
+					<?php echo $_SESSION['rev_success'];unset($_SESSION['rev_success']); ?>
+				</div>
+			<?php
+				} 
+			?>
 
+<?php if(isset($_SESSION['rev_error'])){ ?>
+				<div class="error" style="background-color: rgb(244,0,0);text-align: center;font-size: 1.2em;padding: 10px;color: #fff;">
+					<?php echo $_SESSION['rev_error'];unset($_SESSION['rev_error']); ?>
+				</div>
+			<?php
+				} 
+			?>		
+			
+	
 <div class="container">
 	<div class="row">
 		<div class="col-md-12 col-offset-md-3 col-lg-12">
@@ -175,23 +193,7 @@ else{
 
 <div class="form-group">
 
-		
-<?php if(isset($_SESSION['rev_error'])){ ?>
-				<div class="error" style="background-color: rgba(244,0,0,0.08);text-align: center;font-size: 1.2em;padding: 10px;font-family:;">
-					<?php echo $_SESSION['rev_error'];unset($_SESSION['rev_error']); ?>
-				</div>
-			<?php
-				} 
-			?>		
-			
-<?php if(isset($_SESSION['rev_success'])){ ?>
-				<div  style="background-color: rgba(0,244,66,0.08);text-align: center;font-size: 1.2em;padding: 10px;font-family:;">
-					<?php echo $_SESSION['rev_success'];unset($_SESSION['rev_success']); ?>
-				</div>
-			<?php
-				} 
-			?>		
-	<form method="POST">
+		<form method="POST">
 		<textarea name="review" class="form-control" placeholder="Add a review"></textarea>
 			<button name="rev" class="btn btn-danger" type="submit">submit</button>
 </form>

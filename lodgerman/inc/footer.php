@@ -1,5 +1,5 @@
 <footer class="fixed" style="font-family: 'nunito','sans-serif';color: white;background-color:black;
-margin-top:50px;margin-bottom:50px;">
+margin-top:50px;">
     <div class="container">
         <div class="row" >
 
@@ -36,7 +36,9 @@ $sql = "SELECT * FROM lodger_man ORDER BY visit_count1 DESC";
 $and = mysqli_query($conn,$sql);
 while($row = mysqli_fetch_assoc($and)) {?>
 
-<p><?php echo $row['lodge_name']; ?>
+<p><a style="color: #fff;" href="lodge?lodger_man_id= <?php echo($r[
+'lodger_man_id']); ?>"><?php echo $row['lodge_name']; ?>
+</a>
 </p>
   
 
@@ -45,17 +47,20 @@ while($row = mysqli_fetch_assoc($and)) {?>
              ?>
           </div>
           <div class="col-md-3 d-none d-md-block" style="margin-top: 40px;">
-              <h5>Contacts</h5>
+              <h5>Contact US</h5>
               <hr>
-              <p><i class="fa fa-phone"></i> 0902320233</p>
-              <p><i class="fa fa-envelope"></i> lodgerman@yourhomefuto.com</p>
+              <p><i class="fa fa-phone"></i> 
+<a href="tel:+234902320233"></a>
+              (+234) 902320233</p>
+              <p><i class="fa fa-envelope"></i> <a href="mailto:lodgerman@yourhomefuto.com">lodgerman@yourhomefuto.com</a></p>
           </div>
         </div>
 
 
 
     <div style="text-align: center;">
-  Copyright © 2018 - Yourhomefuto.com.ng/logerman. All rights reserved
+  Copyright &copy 2018
+   - Yourhomefuto.com.ng/logerman. All rights reserved
 	
     </div>
     </div>

@@ -15,10 +15,11 @@
 <meta name="application-name" content="Yourhomefuto">
 <meta name="author" content="ceofred">
 <meta name="robots" content="all">
+
 <link rel="icon" href="../favicon.ico" type="image/x-icon">
 <!-- Facebook Metadata -->
 <meta property="fb:app_id" content="">
-<meta property="og:url" content="https://Yourhomefuto.com.ng/lodgerman">
+<meta property="og:url" content="https://Yourhomefuto.com.ng">
 <meta property="og:type" content="web-app">
 <meta property="og:title" content="Yourhomefuto">
 <meta property="og:image" content="../img/logo.png">
@@ -27,7 +28,7 @@
 <meta property="og:locale" content="">
 <!-- Twitter Metadata -->
 <meta name="twitter:card" content="Yourhomefuto">
-<meta name="twitter:site" content="Yourhomefuto.com.ng/lodgerman">
+<meta name="twitter:site" content="Yourhomefuto.com.ng">
 <meta 	name="twitter:creator" content="ceofred">
 <meta name="twitter:url" content="https://www.Yourhomefuto.com.ng/loderman">
 <meta 	name="twitter:description" content="Find a Lodge in and around campus for free from various location listings,choose the best for yourself and only the best.">

@@ -7,6 +7,7 @@ session_start();
 <html lang="en">
 <head>
 <head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>LodgerMan | yourhomefuto</title>
     <?php include 'inc/header.php'; ?>
 </head>
@@ -15,16 +16,16 @@ session_start();
 <?php require'inc/nav.php'; ?>
 <header style="padding:40px;background-image: url(img/bg.jpg);background-size: cover;background-position: center;"  class="d-md-block d-none">
 	<div class="row" >
+<!-- search dialog for desktop -->
+<div class="col-md-6 ">
+	<div style="background-color: rgba(223,223,234,0.8);border-radius: 10px;margin:70px auto 70px auto;" align="center">
+		<h3 style="padding: 20px;">Search and Book Lodges in FUTO.</h3>
 
-<div class="col-md-6">
-	<div style="background-color: rgba(223,223,234,0.6);border-radius: 10px;margin-top: 50px;" align="center">
-		<h3>Search and Book Lodges in FUTO.</h3>
-<p><b>Search through 702 lodges on campus,quick and easy</b></p>
-<p>- Use lodgerman search engine</p>
-<p>- Select a lodge</p>
-<p>- Check Reviews</p>
-<p>-Reserve your space.</p>
-<p>Now you can sleep well</p>
+		<div style="margin-bottom:30px">
+			<input type="Search" placeholder="Search For a lodge"
+			 style="border:0px;border-left: 4px solid #B0E0E6;width:80%;height:40px;margin: 30px;" name="search">
+		</div>
+
 	</div>
 
 	</div>
@@ -58,15 +59,16 @@ session_start();
 	<i class="fa fa-money"></i>Price
 	<br>
 <select style="border:3px solid #B0E0E6;height: 50px;width: 200px;" name="Price">
-	<option value="100000">
+	
+<option value="NGN.100,000.00">
 		100,000
 	</option>
-	<option value="120000">120,000</option>
-	<option value="110000">110,000</option>
-
-	<option value="90000">90,000</option>
-	<option value="80000">80,000</option>
-	<option value="70000">70,0000</option>
+	<option value="NGN.120,000.00">120,000</option>
+	<option value="NGN.110,000.00">110,000</option>
+	<option value="NGN.90,000.00">90,000</option>
+	<option value="NGN.80,000.00">80,000</option>
+	<option value="NGN.70,000.00">70,0000</option>
+	<!-- OPT -->
 </select>
 			</div>
 		</div>
@@ -120,10 +122,37 @@ Exterior
 
       <!-- mobile header -->
 <header style="padding:20px;background-image: url(img/hot.jpg);background-size:cover;border-raduis:7px;" class="d-md-none">
-	<div class="row" >
-		<div style="margin-top: 30px;width:100%;padding: 10px;" class=" col-sm-12">
+	<div class="row">
+<button  id="btn" class="btn btn-block btn-sm" style="background-color:#B0E0E6;border-radius: 0px;">Search by Name</button>
+	<div id="Search" style="background-color: rgba(223,223,234,0.8);border-top-left-radius:0px;border-top-right-radius: 0px; margin:auto;display: none;" align="center">
+		<h3 style="padding: 20px;">Search and Book Lodges in FUTO.</h3>
+
+		<div style="margin-bottom:30px">
+			<input type="Search" placeholder="Search For a lodge"
+			 style="border:0px;border-left: 4px solid #B0E0E6;width:80%;height:40px;margin: 30px;" name="search">
+		</div>
+
+	<p>---------OR-------</p>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		$("#btn").click(function(){
+    $("#Search").toggle("slow");
+}); 
+		 });	
+	// showSearch(){
+
+	// 	   var x = document.getElementById("Search");
+ //    if (x.style.display === "none") {
+ //        x.style.display = "block";
+ //    } else {
+ //        x.style.display = "none";
+ //    }
+	// }
+</script>
+		<div style="margin-top: 30px;width:100%;padding: 10px;border-radius:8px;" class=" col-sm-12">
 <form method="post" action="lodgermansearch.php">
-<div style="background-color: rgba(223,224,223,0.8);padding: 18Px;">
+<div style="background-color: #fff;padding: 18Px;border-radius: 8px;">
 	<h3 style="background-color: #B0E0E6;width: 100%;padding: 10px;color: #fff;font-size:25px;">
 	<i class="fa fa-bed" style="color: #fff;font-size: 30px;"></i> LodgerMan Search</h3>
 <span>
@@ -149,7 +178,7 @@ Exterior
 			<div class="col-sm-12" style="padding-left: 20px;">
 	<i class="fa fa-money"></i>Price
 	<br>	<select style="border:3px solid #B0E0E6;height: 50px;width: 100%;" name="Price">
-	<option value="100000">
+	<option value="NGN.100,000.00">
 		100,000
 	</option>
 	<option value="NGN.120,000.00">120,000</option>
@@ -277,61 +306,42 @@ echo $num;
 
 
 		<div class="col-md-12" align="center" style="margin-top: 50px;margin-bottom: 20px;border:3px solid #ff7f50">
-		<h5 style="color:#FF7F50 "> Top-20 Around Campus</h5></div>
+		<h5 style="color:#FF7F50 "> Most Visited Around Campus</h5></div>
+
+		<?php 
+require 'inc/dbh.inc.php';
+$sql = 'SELECT * FROM lodger_man ORDER BY visit_count1 DESC LIMIT 10';
+$query = mysqli_query($conn,$sql);
+while($row = mysqli_fetch_assoc($query)) {?>
+
 <div class="col-md-4" style="margin-bottom: 20px;">
 	<div>
 
-	<img src="img/loca5.png" style="" width="100%" height="100%">
+	<img src="../admin/<?php echo $row['thumb'] ?>"
+	 style="" width="100%" height="200px">
 		</div>
 
 
 
 		<h6 style="background-color:#FF7F50;z-index: 1000px;padding: 5px;color:#fff;">
-			<p>Presidential Villa</p>
-		<p>Umuchima</p>
-		<p>NGN.150,000</p>
+			<p><i class="fa fa-home"></i> <?php echo $row['lodge_name']; ?></p>
+		<p><i class="fa fa-map-marker"></i> <?php echo $row['lodge_location']; ?> </p>
+		<p><i class="fa fa-money"></i> <?php echo $row['price']; ?></p>
 
-	<a href="" class="btn btn-block btn-dark" style="color:#fff;">View More</a>
+	<a href="lodge?lodger_man_id= <?php echo($row['lodger_man_id']); ?>" class="btn btn-block btn-dark" style="color:#fff;">View More</a>
 	</h6>
 
 
 
 </div>
-<div class="col-md-4" style="margin-bottom: 20px;">
-	<div>
+  
 
-	<img src="img/loca5.png" style="" width="100%" height="100%">
-		</div>
-
-
-
-		<h6 style="background-color:#FF7F50;z-index: 1000px;padding: 5px;color:#fff;">
-			<p>Presidential Villa</p>
-		<p>Umuchima</p>
-		<p>NGN.150,000</p>
-
-	<a href="" class="btn btn-block btn-dark" style="color:#fff;">View More</a>
-	</h6>
+  <?php
+}
+            
+		 ?>
 
 
-
-</div>
-<div class="col-md-4" style="margin-bottom: 20px;">
-	<div>
-
-	<img src="img/loca5.png" style="" width="100%" height="350">
-		</div>
-
-
-
-		<h6 style="background-color:#FF7F50;z-index: 1000px;padding: 5px;color:#fff;">
-			<p>Presidential Villa</p>
-		<p>Umuchima</p>
-		<p>NGN.150,000</p>
-
-	<a href="" class="btn btn-block btn-dark" style="color:#fff;">View More</a>
-	</h6>
-</div>
 </div>
 </div>
 </div>

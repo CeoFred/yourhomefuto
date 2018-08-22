@@ -169,7 +169,7 @@ exit();
 include('inc/header.php');
 ?>
     </head>
-<body style="background-color: #f1f1f1;">
+<body style="background:url(img/loginbg.jpg);">
 <!--Main Navigation-->
 <header>
 <?php include'inc/nav.php'; 
@@ -181,12 +181,10 @@ include('inc/header.php');
 
 <main style="margin-bottom: 50px;">	<!-- 
 	<div class="form justify-content-center" align="center" > -->
-<h4>Sign Up</h4>
-	<h6>Please fill in this form to create an account</h6>
 	<form method="POST">
 <div class="container">
 <div class="row">
-<div class="col-md-7 col-md-offset-6 col-sm-12 col-lg-4 col-lg-offset-6 col-xl-7 col-xl-offset-6 justify-content-center" align="center" >
+<div class="col-md-7 col-md-offset-1" align="center" style="background-color: rgba(244,244,244,0.4);border-radius: 5px;padding: 20px;margin-top: 30px;">
 
 <?php if(isset($_SESSION['error'])){ ?>
 				<div class="error" style="background-color: rgb(244,0,0);text-align: center;font-size: 1.2em;padding: 10px;font-family:;">
@@ -202,6 +200,9 @@ include('inc/header.php');
 						<?php
 							} 
 						?>	
+
+<h4 >Sign Up</h4>
+	<h6>Please fill in this form to create an account</h6>
 <div class="form-group">
 		<div class="input-group mb-2">
 		<div class="input-group-prepend">
@@ -224,7 +225,7 @@ include('inc/header.php');
 		
 <div class="input-group mb-2">
 		<div class="input-group-prepend">
-			<div class="input-group-text" style="background-color: #66CDAA">
+			<div class="input-group-text" style="background-color: #66CDAA;padding-right: 16px">
 				@
 			</div>
 		</div>

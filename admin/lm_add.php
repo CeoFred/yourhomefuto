@@ -21,6 +21,9 @@ require 'inc/dbh.inc.php';
          $lodge_president_name = mysqli_real_escape_string($conn,$_POST['lodge_president_name']);
          $lodge_president_number = mysqli_real_escape_string($conn,$_POST['lodge_president_number']);
          $date_of_establishment = mysqli_real_escape_string($conn,$_POST['date_of_establishment']);
+         $room_notice = mysqli_real_escape_string($conn,$_POST['room_notice']);
+         $building_type = mysqli_real_escape_string($conn,$_POST['building_type']);
+         $available_network = mysqli_real_escape_string($conn,$_POST['available_network']);
          $Tanks = mysqli_real_escape_string($conn,$_POST['Tanks']);
 // $Extras = mysqli_real_escape_string($conn,$_POST['Extras']);
 $Addons = mysqli_real_escape_string($conn,$_POST['Addons']);
@@ -64,17 +67,20 @@ if (in_array($fileActualExt, $allowed)) {
 //,price,thumb,kitchen_type,distance_from_school,rules,security_level,available_rooms,total_rooms,caretaker_name,caretaker_number,lodge_president_name,lodge_president_number,date_of_establishment,$lodger_man_id
 
 //,'$price','$fileDestination','$kitchen_type','$distance_from_school','$rules','$security_level','$available_rooms','$total_rooms','$caretaker_name','$caretaker_name','$lodge_president_name','$lodge_president_number','$date_of_establishment','$lodger_man_id'
- $sql = "INSERT INTO lodger_man (lodge_name, lodge_location,lodge_description,price,kitchen_type,security_level,distance_from_school,rules,landmark,available_rooms,total_rooms,caretaker_name,caretaker_number,lodger_man_id,Tanks,lodge_president_name,lodge_president_number,date_of_establishment,addons,Facilities,thumb)
-  VALUES ('$lodgename', '$Location','$description','$price','$kitchen_type','$security_level','$distance_from_school','$rules','$landmark','$available_rooms','$total_rooms','$caretaker_name','$caretaker_number','$lodger_man_id','$Tanks','$lodge_president_name','$lodge_president_number','$date_of_establishment','$Addons','$Facilities','$fileDestination');";
+ $sql = "INSERT INTO lodger_man (lodge_name, lodge_location,lodge_description,price,kitchen_type,security_level,distance_from_school,rules,landmark,available_rooms,total_rooms,caretaker_name,caretaker_number,lodger_man_id,Tanks,lodge_president_name,lodge_president_number,date_of_establishment,addons,Facilities,thumb,building_type,room_notice,available_network)
+  VALUES ('$lodgename', '$Location','$description','$price','$kitchen_type','$security_level','$distance_from_school','$rules','$landmark','$available_rooms','$total_rooms','$caretaker_name','$caretaker_number','$lodger_man_id','$Tanks','$lodge_president_name','$lodge_president_number','$date_of_establishment','$Addons','$Facilities','$fileDestination','$building_type','$room_notice','$available_network');";
 if(mysqli_query($conn, $sql)){
+// replace the code below with codes to upload multiple images of the lodges environnment.
+
 $sqll = "INSERT INTO lodger_man_img (thumb,lodge_id) VALUES ('$fileDestination','$lodger_man_id');";
 $qui = mysqli_query($conn,$sqll);
 if ($qui) {
-	$_SESSION['success'] = 'Logde Uploaded';
+	$_SESSION['success'] = 'Lodge Uploaded';
 }else{
 	$_SESSION['error'] = 'Could not upload1';
 }
-}else{
+}
+else{
 	$_SESSION['error'] = 'Could  not upload2';
 }
 
@@ -214,7 +220,13 @@ if ($qui) {
 <?php echo $rules; ?>
 			    </textarea>
 			    </div>
-
+<div>
+	<label>Room Notice</label>
+	<small>If there are no rooms in particular floor,add the notice here.</small>
+	<textarea name="room_notice" class="form-control">
+		
+	</textarea>
+</div>
 
 <div class="form-group">
 			    <label>Security Level</label>
@@ -227,6 +239,28 @@ if ($qui) {
 			    </select>
 			    </div>
 
+<div class="form-group">
+			    <label>Available Network</label>
+			    <select name="available_network" class="form-control">
+			    	<option value="GLO">GLO</option>
+			    	<option value="MTN">MTN</option>
+			    	<option value="AIRTEL">AIRTEL</option>
+			    	<option value="ETISALAT">ETISALAT</option>
+			    	<option value="ALL">ALL</option>
+			    </select>
+			    </div>
+
+
+<div class="form-group">
+			    <label>Building Type</label>
+			    <select name="building_type" class="form-control">
+			    	<option value="Bungaow">Bungaow</option>
+			    	<option value="1 Storey">1 Storey</option>
+			    	<option value="2 Storey">2 Storey</option>
+			    	<option value="3 Storey">3 Storey</option>
+			    	<option value="4 Storey">4 Storey</option>
+			    </select>
+			    </div>
 
 
 			  <div class="form-group">
@@ -274,7 +308,7 @@ if ($qui) {
 			  	<input type="date" value=" <?php echo($date_of_establishment); ?> " name="date_of_establishment" class="form-control">
 			    </div>
 					<div class="form-group">
-						<label>Lodge Facilities</label>
+						<label>Room Facilities</label>
 						<input type="text" value=" <?php echo($Facilities); ?> " name="Facilities" class="form-control">
 						</div>
 
@@ -300,6 +334,11 @@ if ($qui) {
 			    <p class="help-block">Only jpg/png are allowed.</p>
 			  </div>
 
+<div class="form-group">
+			    <label>OtherImages(Multiple)</label>
+			    <input multiple type="file" name="multipleUploads">
+			    <p class="help-block">Only jpg/png are allowed.</p>
+			  </div>
 
 			  <button type="submit" class="btn btn-primary">Submit</button>
 			</form>

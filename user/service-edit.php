@@ -13,21 +13,21 @@ if (!isset($_SESSION['email'])) {
 	<?php 
 	include('inc/header.php') ?>
 </head>
-<body>
 
+<body>
 <?php 
 include('../inc/nav.php'); ?>
 
 
-<?php 
-require('../inc/dbh.inc.php');
-$sql = "SELECT * FROM services WHERE email = '$email';";
-{
+// <?php 
+// require('../inc/dbh.inc.php');
+// $sql = "SELECT * FROM services WHERE email = '$email';";
+// {
 	
-}else{
-	echo "noo";
-}
+// }else{
+// 	echo "noo";
+// }
 
- ?>
+//  ?>
 </body>
 </html>

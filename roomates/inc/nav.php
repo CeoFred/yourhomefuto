@@ -1,10 +1,7 @@
-
-
-
 <?php
 if (isset($_SESSION['email'])) {
   echo '
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color:#66CDAA">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:   #cc0044">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -33,11 +30,6 @@ if (isset($_SESSION['email'])) {
       <li class="nav-item">
         <a class="nav-link" href="../shopon/">ShopOn</a>
       </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="../Rent/">My Lodge Rents</a>
-      </li>
-
 <li class="nav-item">
 <a class="nav-link" href="../Campus-pilot/">Campus Pilot</a>
 </li>
@@ -51,7 +43,7 @@ if (isset($_SESSION['email'])) {
 }
 else{
   echo '
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color:#66CDAA">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:   #cc0044">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -82,9 +74,7 @@ else{
       <li class="nav-item">
         <a class="nav-link" href="../shopon/">ShopOn</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="../Rent/">My lodge rent</a>
-      </li>
+      
 
 <li class="nav-item">
 <a class="nav-link" href="../Campus-pilot/">Campus Pilot</a>

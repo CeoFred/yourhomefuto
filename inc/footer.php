@@ -1,63 +1,64 @@
-<?php
-if (isset($_POST['sub'])) {
-require'dbh.inc.php';
-  $email = mysqli_real_escape_string($conn, $_POST['mail']);
-  if (empty($email)) {
-    $_SESSION['failed'] = 'No Email Address Found,Please use a valid Email';
-  header("Location:../?Error");
-  exit();
-  }else{
-    $sql = "INSERT INTO subscribers (email) VALUES ('$email');";
-    mysqli_query($conn ,$sql);
-    $_SESSION['success'] = 'Subscribed!';
-    header("Location: ../?Successfully Subscribed");
-    exit();
+
+<footer class="fixed" style="font-family: 'nunito','sans-serif';color: white;background-color:black;margin-top:40px;">
+<style type="text/css">
+  
+  a{
+    color: #fff;
   }
-}
-?>
-<footer class="fixed bottom" style="color: white;background-color:#505050;margin-top:10px;">
+  a:hover{
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+  }
+</style>
     <div class="container">
-        
         <div class="row">
-            <div align="center" class="col-xl-4 col-md-3 col-sm-12 col-xs-12 d-none d-md-block">
-    <form method="POST" action="inc/footer.php">
-                <p>Subscribe to our newsetter</p>
-    	<input style="display: inline;" type="email" name="mail" placeholder="Email" class="form-control" name=""><button type="submit" name="sub" class="btn btn-success">SUBSCRIBE<i class="fa fa-envelope-o"></i></button>
-    </form>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-3 col-xl-4 d-none d-md-block" align="center">
-        <li style="list-style: none;">
-            <ul><i class="fa fa-phone"></i>090********</ul>
+          <div class="col-md-3 d-none d-md-block" style="margin-top: 40px;">
+          <p style="font-size:25px;border-bottom: 2px solid #fff;width: 150px;">Company</p>
+          <hr>
+          <p><a href="blog.Yourhomefuto.com.ng">Blog</a></p>
+          <p><a href="about-us/">About Us</a></p>
+          <p><a href="job-vacancy/">Job Openings</a></p>
+          <p><a href="privacy-policy/">Privacy and Policy</a></p>
+          <p><a href="terms-conditions/">Terms of service</a></p>
+          <p><a href="how-we-work/">How we work</a></p>  
+          </div>
 
-            <ul style="line-height: 0.2px;"><i class="fa fa-home"></i>Federal University of Technology,Owerri.</ul>
-        </li>
-    </div>
-    <div class="col-xl-4 col-sm-12 col-md-3 col-xs-12 d-none d-md-block" align="center">
-        <i class="fa fa-facebook-square"></i>
- <i class="fa fa-git"></i>
- <i class="fa fa-google-plus-square"></i>
- <i class="fa fa-instagram"></i>
-<i class="fa fa-viber"></i>
-<i class="fa fa-whatsapp"></i>
-<i class="fa fa-twitter-square"></i>
-<i class="fa fa-youtube"></i>
-    <hr>
-    <h5>Powered By</h5>
-    <i class="fa fa-paypal"></i>
-    <i class="fa fa-stripe"></i>
-    <i class="fa fa-creditcard"></i>
-    </div>
-</div>
+          <div class="col-md-3 d-none d-md-block" style="margin-top: 40px;">
+            <p style="font-size:25px;border-bottom: 2px solid #fff;width: 150px;">Community</p>
+            <hr>
+<p><a href="twitter.com/yourhomefuto">Twitter</a></p>
+<p><a href="Facebook.com/Yourhomefuto">Facebook</a> </p>
+<p><a href="Instagram.com/Yourhomefuto">Instagram</a> </p>
+<p><a href="googleplus.com/">Google</a></p>
+<p><a href="Pinterest.com/">Pinterest</a></p>
+<p><a href="youtube.com/">Youtube</a></p>
+<p><a href="">Apartments</a></p>
+          </div>
+                    <div class="col-md-3 d-none d-md-block" style="margin-top: 40px;">
+            <p style="font-size:25px;border-bottom: 2px solid #fff;width: 150px;">Services</p>
+            <hr>
+<p><a href="lodgerman/" target="_blank">Logerman</a></p>
+
+<p><a href="Campus-pilot/" target="_blank">Campus Pilot</a></p>
+
+<p><a href="services/" target="_blank">Campus services</a></p>
+
+          </div>
+          <div class="col-md-3 d-none d-md-block" style="margin-top: 40px;">
+              <p style="font-size:25px;border-bottom: 2px solid #fff;width: 150px;">Contacts</p>
+              <hr>
+              <p><i class="fa fa-phone"></i><a href="tel:0902320233"></a>Call</p>
+              <p ><i class="fa fa-envelope"></i> <a href="mailto:contact@yourhomefuto.com.ng"></a>Email</p>
+              <p><i class="fa fa-chat"></i></p>
+          </div>
+        </div>
 
 
 
-    <div style="text-align: center;">
-    © 2018 - Yourhomefuto.com.ng All rights reserved
+    <div style="text-align: center;padding: 20px;">
+  Copyright © 2018 - <a href="#">Yourhomefuto.com.ng/</a>  All rights reserved
+  
     </div>
-<div align="center" >
-    <i class="fa fa-opencart" style="font-size: 30px;"></i>
-    
-</div>
-    
     </div>
     </footer>

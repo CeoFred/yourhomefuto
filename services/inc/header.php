@@ -29,7 +29,7 @@
 <meta name="twitter:site" content="Yourhomefuto.com.ng">
 <meta 	name="twitter:creator" content="ceofred">
 <meta name="twitter:url" content="https://www.Yourhomefuto.com.ng">
-<meta 	name="twitter:description" content="Looking for any service on campus? We've got you covered view all available services and business around and begin to patronized.">
+<meta 	name="twitter:description" content="Looking for any service on campus? We've got you covered. View all available services and business around and begin to patronized.">
 <meta name="twitter:image" content="../img/logo.png">
 <!-- Application shortcut icon -->
 <meta name="mobile-web-app-capable" content="yes">

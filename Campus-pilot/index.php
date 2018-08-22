@@ -89,12 +89,12 @@ if (mysqli_query($conn,$sql)) {
 						<?php
 							} 
 						?>			
-	<div class="row" style="margin-top: -3px;">
+	<div class="row" style="margin-top:3px;">
 			
-			<div align="center" class="col-md-8">
+			<div align="center" class="col-md-8" style="margin-top:-3px;">
 				<!-- three images from campus pilot ,circle images -->
-<span class="d-none d-md-block"><h2 style="color: black;">Feeling bad about your movement?don't let it spoil your day,call a pilot or book an excutive seat today.</h2>
-</span>
+<!-- <span class="d-none d-md-block"><h2 style="color: black;">Feeling bad about your movement?don't let it spoil your day,call a pilot or book an excutive seat today.</h2>
+</span> -->
 
 <div class="row">
 
@@ -161,32 +161,33 @@ if (mysqli_query($conn,$sql)) {
 				</div>
 
 				<form  action="index" method="POST">
-					<div align="center">
+					<div align="center" style="margin: 10px;">
 
 						
-					<input type="text" style="border-color: 4px solid blue;height: 50px;width: 40%;" name="fname" placeholder="FirstName" value="<?php
+					<input type="text" style="border-color: 4px solid blue;height: 50px;width: 40%;border:none;border-bottom: 2px solid black" name="fname" placeholder="FirstName" onmouseenter="" value="<?php
 echo($fname);
 					?>">
 
-					<input type="text" style="border-color: 1px solid blue;height: 50px;width: 40%;" name="lname" placeholder="LastName" value="<?php
+					<input type="text" style="border-color: 1px solid blue;height: 50px;width: 40%;border:none;border-bottom: 2px solid black" name="lname" placeholder="LastName" value="<?php
 echo($lname);
 					?>">
 
 					</div>
 					<div align="center">
 				
-					<input  value="<?php
-echo($email);
-					?>" type="email" name="email" placeholder="Email" style="border-color: 1px solid blue;height: 50px;width: 80%">
-						
 					<input value="<?php
 echo($phone);
-					?>" type="text" name="phone" placeholder="PhoneNumber" style="border-color: 1px solid blue;height: 50px;width: 40%">
-					<input  type="text" name="Institution" placeholder="Institution" style="border-color: 1px solid blue;height: 50px;width: 40%">
+					?>" type="text" name="phone" placeholder="PhoneNumber" style="border-color: 1px solid blue;height: 50px;width: 40%;border:none;border-bottom: 2px solid black">
+					<input  type="text" name="Institution" placeholder="Institution" style="border-color: 1px solid blue;height: 50px;width: 40%;border:none;border-bottom: 2px solid black">
 						
-					<input  type="password" name="pass1" placeholder="Password" style="border-color: 1px solid blue;height: 50px;width: 40%">
+					<input  type="password" name="pass1" placeholder="Password" style="border-color: 1px solid blue;height: 50px;width: 40%;border:none;border-bottom: 2px solid black">
 										
-					<input  type="password" name="pass2" placeholder="Confirm-Password" style="border-color: 1px solid blue;height: 50px;width: 40%">
+					<input  type="password" name="pass2" placeholder="Confirm-Password" style="border-color: 1px solid blue;height: 50px;width: 40%;border:none;border-bottom: 2px solid black">
+				
+					<input  value="<?php
+echo($email);
+					?>" type="email" name="email" placeholder="Email" style="border-color: 1px solid blue;height: 50px;width: 80%;border:none;border-bottom: 2px solid black">
+						
 					<br>
 					<div style="background-color: #fff;margin-top: 20px;width: 80%;">
 						<input type="checkbox" name="agree" class="checkbox">

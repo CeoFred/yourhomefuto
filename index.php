@@ -1,13 +1,12 @@
 <?php
 session_start();
 
-if (isset($_POST['cookie_okay'])) {
-  setcookie('cookie_okay','true',time() + 3600000);
+if (isset($_POST['cookie'])) {
+  $set  = setcookie('cookie_okay','true',time() + 3600000);
+if ($set) {
+header('Locationn: index');
 }
-
-
-
-
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +20,6 @@ if (isset($_POST['cookie_okay'])) {
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 </head>
-
 <script>
 
   if ($('.cookie-banner').length) {
@@ -44,8 +42,9 @@ document.cookie = "cookie_set_yhf= true;";
 
 <?php 
 
-if (!isset($_COOKIE['cookie_set_yhf'])) { ?>
+if (!isset($_COOKIE['cookie_okay'])) { ?>
 <!--  cookie banner -->
+<form method="POST"> 
  <div style="background:#333;position:fixed;
 left:0;right:0;margin:0 auto;width:100%;color:#fff;padding:5px;display: inline-block;" class="fixed-bottom"
 align="center" class="cookie-banner" id="cookie">
@@ -55,11 +54,13 @@ align="center" class="cookie-banner" id="cookie">
         accept cookies or see why we use cookies
         <a href="about-cookie">here.</a> 
         <br>
-        <button type="button" class="btn btn-success" onclick="cookie_set();">Continue</button>
+        <button type="submit" name="cookie" class="btn btn-success" >Continue</button>
      </p>
    </div>
  </div>
  <!-- cookie banner/ -->
+  
+</form>
  
 
 <?php
@@ -117,86 +118,84 @@ align="center" class="cookie-banner" id="cookie">
 </div>
 <div class="container-fluid">
 <div class="row">
-  <div class="col-xs-12 col-sm-12 col-md-3">
+  <div class="col-xs-12 col-sm-12 col-md-4">
   <div class="card" style="border:1px solid white;margin-top: 15px;">
-  <img class="center" style="display: block;margin-left: auto;margin-right: auto;width: 50%;" width="100" src="img/home-icon.png" alt="Lodge">
+  <!-- <img class="center" style="display: block;margin-left: auto;margin-right: auto;width: 50%;" width="100" src="img/home-icon.png" alt="Lodge"> -->
+  <div align="center">
+    <i class="fa fa-home" style="font-size: 90px;color: #B0E0E6">
+      
+    </i>
+  </div>
   <div class="card-body">
-    <h5 class="card-title center">Lodgerman</h5>
+    <h5 class="card-title" align="center" style="border-bottom: 2px solid #B0E0E6;padding: 10px;">Lodgerman</h5>
     <p class="card-text">Find a Lodge in and around campus for free from various location listings,choose the best for yourself and only the best.<br></p>
   </div>
 </div>
-<hr class="d-md-none">
 </div>
-<div class="col-xs-12 col-sm-12 col-md-3">
+<div class="col-xs-12 col-sm-12 col-md-4">
 
   <div class="card" style="border:1px solid white;margin-top: 15px;">
-    <img class="center" style="display: block;margin-left: auto;margin-right: auto;width: 50%;"  src="img/friend.png" alt="Roomates">
+    <!-- <img class="center" style="display: block;margin-left: auto;margin-right: auto;width: 50%;"  src="img/friend.png" alt="Roomates"> -->
+    <div align="center">
+      <i class="fa fa-user-circle-o" style="font-size: 90px;color:#cc0044"></i>
+    </div>
 <div class="card-body">
-    <h5 class="card-title center">Roomates</h5>
+    <h5 class="card-title center" style="border-bottom: 2px solid #cc0044;padding: 10px;" align="center">Roomates</h5>
     <p class="card-text">Get yourself your taste roomate from our nano-social community, check their profiles and get connected <br></p>
   </div>
-</div>
-<hr class="d-md-none">
-</div>
+</div></div>
 
-<div class="col-xs-12 col-sm-12 col-md-3">
+<div class="col-xs-12 col-sm-12 col-md-4">
 
   <div class="card" style="border:1px solid white;margin-top: 15px;">
-    <img class="center" style="display: block;margin-left: auto;margin-right: auto;width: 50%;"  src="img/service.png" alt="Services">
-<div class="card-body">
-    <h5 class="card-title center">Campus Services</h5>
+    <!-- <img class="center" style="display: block;margin-left: auto;margin-right: auto;width: 50%;"  src="img/service.png" alt="Services"> -->
+    <div align="center">
+    <i class="fa fa-gear" style="font-size: 90px;color: #D2691E"></i>
+  
+    </div>
+    <div class="card-body">
+    <h5 class="card-title" align="center" style="border-bottom: 2px solid #D2691E;padding: 10px;">Campus Services</h5>
     <p class="card-text">Looking for any service quick and easy? We've got you covered view all available services and business around and begin to patronized.</p>
   </div>
 </div>
-<hr class="d-md-none">
 </div>
-
-<hr class="d-md-none">
-<div class="col-xs-12 col-sm-12 col-md-3">
+</div>
+</div>
+<div class="row">
+<div class="col-xs-12 col-sm-12 col-md-4">
 
   <div class="card" style="border:1px solid white;margin-top: 15px;">
-    <img class="center" style="display: block;margin-left: auto;margin-right: auto;width: 50%;"  src="img/sell.svg" alt="IExchange">
+    <div align="center">
+      
+      <i class="fa fa-shopping-cart" style="font-size: 90px;color:  #ffcc00;">
+      </i>
+    </div>
 <div class="card-body">
-    <h5 class="card-title center">IExchange</h5>
+    <h5 class="card-title" align="center" style="border-bottom: 2px solid  #ffcc00;padding: 20px;">ShopON</h5>
+    <p class="card-text">Shoping Made easy,escape the sweat break the stress,lets handle it for you.shop for as many items you might need at exactly same market price and get your items delivered to your door step.</p>
+  </div>
+</div>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-4">
+
+  <div class="card" style="border:1px solid white;margin-top: 15px;">
+    <div align="center">
+      <i class="fa fa-info-circle" style="font-size: 90px"></i>
+    </div>
+<div class="card-body">
+    <h5 class="card-title" align="center" style="padding: 20px;border-bottom: 2px solid black">IExchange</h5>
     <p class="card-text">Now you can search for fairly used items ranging from phones,generators,art works,laptops and many more.</p>
   </div>
 </div>
 </div>
-</div>
-<hr class="d-md-none">
-</div>
-<div class="row">
-<div class="col-xs-12 col-sm-12 col-md-3 ">
-
-  <div class="card" style="border:1px solid white;margin-top: 15px;">
-    <img class="center" style="display: block;margin-left: auto;margin-right: auto;width: 50%;"  src="img/images.png" alt="ShopON">
-<div class="card-body">
-    <h5 class="card-title center">ShopON</h5>
-    <p class="card-text">Shoping Made easy,escape the sweat break the stress,lets handle it for you.shop for as many items you might need at exactly same market price and get your items delivered to your door step.</p>
-  </div>
-</div>
-<hr class="d-md-none">
-</div>
-<div class="col-xs-12 col-sm-12 col-md-3">
-
-  <div class="card" style="border:1px solid white;margin-top: 15px;">
-    <img class="center" style="display: block;margin-left: auto;margin-right: auto;width: 50%;" src="img/unnamed.png" alt="Rent">
-<div class="card-body">
-    <h5 class="card-title center">My Lodge Rents</h5>
-    <p class="card-text">Manage and pay your lodge rent on yourhomefuto ,using our quick and easy service on the go.</p>
-  </div>
-</div>
-<hr class="d-md-none">
-</div>
-
-<div class="col-xs-12 col-sm-12 col-md-3">
+<div class="col-xs-12 col-sm-12 col-md-4">
 
   <div class="card" style="border:1px solid white;margin-top: 15px;">
   <div align="center">
-    <i class="fa fa-car" style="font-size: 110px" ></i>
+    <i class="fa fa-car" style="font-size: 90px;color: #1f3057" ></i>
 </div>
 <div class="card-body">
-    <h5 class="card-title">Campus Pilot</h5>
+    <h5 class="card-title" align="center" style="border-bottom: 2px solid #1f3057;padding: 20px;">Campus Pilot</h5>
     <p class="card-text">Campus pilot helps you out in times of transportation difficulties at affordable prices.</p>
   </div>
 </div>

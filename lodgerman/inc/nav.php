@@ -1,6 +1,3 @@
-
-
-
 <?php
 
 if (isset($_SESSION['email'])) {
@@ -18,7 +15,7 @@ if (isset($_SESSION['email'])) {
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 
       <li class="nav-item active">
-        <a class="nav-link" href="#">LodgerMan</a>
+        <a class="nav-link" href="../lodgerman">LodgerMan</a>
       </li>
 
       <li class="nav-item">
@@ -62,7 +59,7 @@ else{
         <a class="nav-link" href="../index.php">Home<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#">LodgerMan</a>
+        <a class="nav-link" href="../lodgerman">LodgerMan</a>
       </li>
 
       <li class="nav-item">

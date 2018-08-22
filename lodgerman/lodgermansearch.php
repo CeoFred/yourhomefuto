@@ -19,7 +19,6 @@ $num = mysqli_num_rows($q);
 include 'inc/header.php';
 	?>
 	<title>Logerman Search</title>
-
 </head>
 <body>
 <?php
@@ -42,23 +41,67 @@ if ($num > 0) {
 
         		<div class="col-md-3">
 
-<div class="card">
-	<div class="card-header">
-
-        			<img height="250" class="card-img-top" src="../admin/<?php echo($r['thumb']); ?>" >
-	</div>
-	<div class="card-body">
-		<div class="text-center">
-					<h6><i class="fa fa-home" style="font-size: 20px;"></i><?php echo ' '. $r['lodge_name']; ?></h6>
-        		<h6><i class="fa fa-money" style="font-size: 20px;"></i><?php echo($r['price']); ?></h6>
-        			<h6><i class="fa fa-map-marker" style="font-size: 20px;"></i><?php echo' '.($r['lodge_location']) ?></h6>
-
-        			<a href="lodge?<?php echo($r['lodge_name']); ?>" class="btn btn-primary btn-group">View Lodge</a>
-<a href="" class="btn-group">
-        			<i class="fa fa-heart" style="font-size: 20px;color: red">Like</i>
+<div class="card" style="width: 100%;">
+<div class="">
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<ol class="carousel-indicators">
+<!-- <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li> -->
+<!-- <li data-target="#carouselExampleIndicators" data-slide-to="1"></li> -->
+<!-- <li data-target="#carouselExampleIndicators" data-slide-to="2"></li> -->
+</ol>
+<div class="carousel-inner">
+<div class="carousel-item active">
+<a>
+<img class="d-block w-100 d-none d-sm-block" height="330" width="100%" src="../admin/<?php echo $r['thumb']; ?>" alt="campus-pilot" style="">
 </a>
-		</div>
-        		</div>
+</div>
+
+<div class="carousel-item">
+<a>
+<img class="d-block w-100 d-none d-sm-block" height="330" src="img/hot.jpg" alt="Ihiagwa">
+</a>
+<div class="carousel-caption">
+<h6 style="margin-bottom:-40px;"></h6>
+
+</div>
+</div>
+</div>
+<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: rgba(0,204,0,0.8);border-radius: 7px;padding:20px;"></span>
+<span class="sr-only">Previous</span>
+</a>
+<a class="carousel-control-next" href="#carouselExampleIndicators"  role="button" data-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true" style="background-color: rgba(0,204,0,0.8);border-radius: 7px;padding:20px;"></span>
+<span class="sr-only">Next</span>
+</a>
+</div>
+<h5 class="card-title">
+<p style="padding: 5px;"><i class="fa fa-home" style="font-size:20px;">
+
+</i><?php echo $r['lodge_name']; ?>
+</p>
+
+</h5>
+<p class="card-text">
+  <p style="padding:5px;"><i class="fa fa-map-marker" style="font-size: 20px;"></i> <?php echo $r['lodge_location']; ?></p>
+
+  <p style="padding:5px;"><i class="fa fa-road" style="font-size: 20px;"></i> <?php echo $r['distance_from_school']; ?></p>
+
+<p style="padding: 10px;"><i class="fa fa-money" style="font-size: 20px;"></i>
+<?php echo $r['price'] ?></p>
+
+</p>
+<div class="btn-block" role="group" align="center" style="margin: 20px;">
+<a style="color: black;" href="lodge?lodge_name=<?php echo($r['lodgename']); ?>" class="btn btn-primary"><i class="fa fa-eye"></i>View</a>
+<a   class="btn btn-secondary disabled"><i class="fa fa-book"></i>Book</a>
+
+<a href="https://wa.me/?text=Check out lodges in Umuchima,Futo now on yourhomefuto.com.ng/lodgerman/lodge?lodge_name=<?php echo($r['lodge_name']); ?>" class="btn btn-success"><i class="fa fa-whatsapp"></i>Share
+
+
+</a>
+</div>
+
+</div>
 </div>
 
 <br>
@@ -96,27 +139,41 @@ else{
 	<div class="container-fluid">
 	<u><b><h4>RELATED TO SEARCH RESULTS</h4></b></u>
 		<div class="row">
-
 	<?php
 require 'classoop.php';
 $obj = new gen;
-$sql = "SELECT * FROM lodger_man WHERE price = '$Price';";
+$sql = "SELECT * FROM lodger_man WHERE price = '$Price' AND lodge_location = '$Location'";
 
 
 if ($ok =  $obj->query($sql)) {
-	 while ($get = mysqli_fetch_assoc($ok)) {?>
+	 while ($r = mysqli_fetch_assoc($ok)) {?>
 
 		<div class="col-md-3">
-	         <div class="card">
-	         	<div class="card-header">
-	         	<div class="card-img-top">
-	         	<img alt="<?php echo($r['lodge_name']); ?>"  height="250" width="100%" src="../admin/<?php  echo($get["thumb"]); ?>" >
-	         	</div>
-	         	</div>
-	         	<div class="card-body">
-	         		<?php echo($get["lodge_name"]); ?>
-	         	</div>
-	         </div>
+	         <div class="card" style="width: 100%;">
+<div>
+<h5 class="card-title">
+<p style="padding: 5px;"><i class="fa fa-home" style="font-size:20px;">
+
+</i><?php echo $r['lodge_name']; ?>
+</p>
+
+</h5>
+<p class="card-text">
+  <p style="padding:5px;"><i class="fa fa-map-marker" style="font-size: 20px;"></i> <?php echo $r['lodge_location']; ?></p>
+
+  <p style="padding:5px;"><i class="fa fa-road" style="font-size: 20px;"></i> <?php echo $r['distance_from_school']; ?></p>
+
+<p style="padding: 10px;"><i class="fa fa-money" style="font-size: 20px;"></i>
+<?php echo $r['price'] ?></p>
+
+</p>
+<div class="btn-block" role="group" align="center" style="margin: 20px;">
+<a style="color: black;" href="lodge?lodge_name=<?php echo($r['lodge_name']); ?>" class="btn btn-primary"><i class="fa fa-eye"></i>View</a>
+</div>
+
+</div>
+</div>
+
 			</div>
 
 	<?php }

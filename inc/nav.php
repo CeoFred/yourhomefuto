@@ -30,9 +30,6 @@ if (isset($_SESSION['email'])) {
         <a class="nav-link" href="shopon/">shopon</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="Rent/">Rents</a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link" href="Campus-pilot/">CampusPilot</a>
       </li>
     </ul>
@@ -73,16 +70,13 @@ else{
         <a class="nav-link" href="shopon/">shopon</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="Rent/">Rents</a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link" href="Campus-pilot/">Campus Pilot</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <a class="btn btn-success my-2 my-sm-0" href="login" type="submit">Login</a>
+      <a class="btn btn-success my-2 my-sm-0" href="login" >Login</a>
 
-      <a class="btn btn-outline-dark my-2 my-sm-0" href="signup" type="submit">Signup</a>
+      <a class="btn btn-outline-dark my-2 my-sm-0" href="signup">Signup</a>
     </form>
   </div>
 </nav>';
